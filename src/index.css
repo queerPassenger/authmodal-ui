@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+}
+body{
+  margin: 0px;
+}
+.header-container {
+   position: relative;
+   top: 0;
+   z-index: 10;
+   background: white;
+   height: 80px;
+   padding: 10px;
+   border-bottom: 1px solid lightgrey;
+   min-width: 500px;
+}
+.header-container > .logo {
+  margin-left: 50px;
+  float: left;
+}
+.header-container > .logo > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px; 
+  float: left;
+}
+.header-container > .logo > .logo-txt {
+  float: left;
+  margin-left: 10px;
+  margin-top: 25px;
+  font-style: italic;
+  font-size: 14px;
+  color: gray;
+  font-weight: bold;
+}
+.logo-txt > div:last-child{
+  margin-left: 10px;
+  font-size: 12px;
+}
+.logout{
+  float: right;
+  margin-right: 10px;
+  margin-top: 25px;
+  font-size: 14px;
+  font-weight: bold;  
+  color: gray;
+  cursor: pointer;
+}
+.logout > div:hover {  
+  text-decoration: underline;
+}
+.sign-section {
+  background-image: url('https://images.unsplash.com/photo-1548092372-0d1bd40894a3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+  background-size: cover;
+}
+.sign-container {
+    margin: 0 auto;
+    max-width: 500px;
+    min-height: calc(100vh - 80px);
+    font-family: monospace;
+}
+.sign-container:before {
+  content: '';
+  height: 80px;
+  display: block;
+}
+.sign-container > .sign-sub-container {
+  padding: 40px;
+  border-radius: 5px;
+  min-height: 400px;
+  background-color: rgba(0,0,0,.75);
+  color: white;
+}
+.sign-container >
+.sign-sub-container > 
+.sign-fields-container , .sign-actions-container {
+  width: 100%;
+  min-width: 300px;
+}
+.sign-container >
+.sign-sub-container > 
+.sign-fields-container >
+.input-field{
+    position: relative;
+    left: 0;
+    margin-bottom: 30px;    
+}
+.sign-container >
+.sign-sub-container > 
+.sign-fields-container >
+.input-field:first-child {
+  margin-top: 30px;
+}
+.sign-container >
+.sign-sub-container > 
+.sign-fields-container >
+.input-field > 
+label{
+    position: absolute;
+    left: 10px;
+    top: 2px;
+    color: gray;
+    font-size: 12px;
+}
+.sign-container >
+.sign-sub-container > 
+.sign-fields-container >
+.input-field > 
+input
+{
+    width: 100%;
+    height: 45px;
+    padding: 10px 10px;
+    border-radius: 3px;
+    border: 0px;    
+    font-size: 16px;
+    outline: 0px;
+    cursor: pointer;
+}
+.sign-container >
+.sign-sub-container > 
+.sign-actions-container >
+button{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 45px;
+    border-radius: 3px;
+    border: 0px; 
+    font-size: 16px;
+    font-weight: bold;
+    background: gray;
+    color: white;
+    cursor: pointer;
+}
+.error-text{
+  color: red;
+  width: 100%;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.home-section {
+  max-width: 1000px;
+  min-width: 500px;
+  margin: 0 auto;
+}
+.home-section:before{
+  content: '';
+  height: 50px;
+  display: block;
+}
+.grid-container {
+  position: relative;
+  width: 1000px;  
+  height: 300px;
+  background: #e8e8e8;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.search-container > input{
+  width: 30%;
+  max-width: 400px;
+  min-width: 200px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding: 5px;
+}
+.search-container > button {
+  width: 30%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
+  padding: 5px;
+  cursor: pointer;
+}
+.home-section > .home-header{
+  text-align: center;
+}
+.grid-header-container, .grid-body-container{
+  position: relative;
+}
+.header-row-container, .body-row-container{
+  position: absolute;
+}
+.header-cell, .body-cell{
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.header-row-container {
+  border-bottom: 1px solid gray;
+}
+.grid-header-view {
+  overflow: hidden;
+}
+.grid-body-view {
+  overflow: auto;
+}
