@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './header';
 import { navigate } from './utils';
 import DataGrid from './dataGrid';
+import PageSearch from './pageSearch';
 
 const columns = ['S.no', 'Name', 'Gender', 'Place', 'DOB'];
 const rows = [...Array(100)].map((x, ind) => ({
@@ -16,7 +17,8 @@ const Home = () => {
     const [userInfo, updateUserInfo] = useState({
         username: '',
         emailId: ''
-    })
+    });
+    const [enablePageSearch, updateEnablePageSearch] = useState(false);
     useEffect(() => {
         fetch('/userinfo')
         .then(async (resp) => {
@@ -27,20 +29,30 @@ const Home = () => {
                 
                 else {                
                     alert(data.msg? data.msg: 'Something went wrong');
-                    //navigate('/signin');
+                    navigate('/signin');
                 }
             }
             catch(err) {
                 alert('Something went wrong');
-                //navigate('/signin');
+                navigate('/signin');
             }
             
         })
         .catch((err) => {
             alert('Something went wrong');
-            //navigate('/signin');
+            navigate('/signin');
             console.log('Error', err);
         })
+    }, []);
+    useEffect(() => {
+        const handleSearch = (e) => {
+            if(e.shiftKey && e.keyCode === 70) 
+                return setTimeout(() => updateEnablePageSearch(true) , 250);
+            if(e.keyCode === 27)
+                return updateEnablePageSearch(false);            
+        }
+        window.addEventListener('keydown', handleSearch);
+        return () => window.removeEventListener('keydown', handleSearch);
     }, []);
     return (
         <div>
@@ -48,10 +60,15 @@ const Home = () => {
                 auth={true}
                 user={userInfo}
             />
-            <DataGrid
-                rows={rows}
-                columns={columns}
-            />
+            <div id='search-area'>
+                <DataGrid
+                    rows={rows}
+                    columns={columns}
+                />
+            </div>            
+            <div className='footer'>
+                {enablePageSearch && <PageSearch />}
+            </div>
         </div>
     )
 }
