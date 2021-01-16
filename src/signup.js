@@ -43,7 +43,7 @@ const Signup = () => {
         });
         fetch(request)
         .then(async (resp) => {
-            if(resp.status === 200) 
+            if(resp.status === 201) 
                 navigate('/home');
             else {
                 try {
