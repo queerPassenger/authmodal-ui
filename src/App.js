@@ -3,9 +3,9 @@
 // export default Signin;
 
 //SIGNUP BUILD
-import Signup from './signup';
-export default Signup;
+// import Signup from './signup';
+// export default Signup;
 
 //HOME BUILD
-// import Home from './home';
-// export default Home;
+import Home from './home';
+export default Home;

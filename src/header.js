@@ -33,8 +33,13 @@ const Header = (props) => {
                     </div>                                 
                 </div>
                 {props.auth && 
-                    <div className='logout'>
-                        <div onClick={onLogout}>Logout</div>
+                    <div className='right-menu'>
+                        <div className='logout'>
+                            <div onClick={onLogout}>Logout</div>
+                        </div>
+                        <div className='user'>
+                            {props.user.username}
+                        </div>
                     </div>
                 }
             </div>

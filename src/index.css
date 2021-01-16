@@ -37,17 +37,28 @@ body{
   margin-left: 10px;
   font-size: 12px;
 }
-.logout{
+.right-menu {
   float: right;
   margin-right: 10px;
   margin-top: 25px;
   font-size: 14px;
   font-weight: bold;  
   color: gray;
+}
+.logout{  
+  float: right;
   cursor: pointer;
+  margin-right: 10px;
+  font-family: monospace;
 }
 .logout > div:hover {  
   text-decoration: underline;
+}
+.user{
+  float: right;
+  margin-right: 30px;
+  font-family: monospace;
+  color: gray;
 }
 .sign-section {
   background-image: url('https://images.unsplash.com/photo-1548092372-0d1bd40894a3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
@@ -153,10 +164,10 @@ button{
 .grid-container {
   position: relative;
   width: 1000px;  
-  height: 300px;
-  background: #e8e8e8;
+  height: 400px;
   margin: 0 auto;
   overflow: hidden;
+  box-shadow: 1px 1px 14px #e4e4e4;
 }
 .search-container > input{
   width: 30%;
@@ -182,12 +193,18 @@ button{
 }
 .header-row-container, .body-row-container{
   position: absolute;
+  border-bottom: 1px solid #d2d2d2;
 }
 .header-cell, .body-cell{
   position: absolute;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  padding: 15px;
+  font-family: monospace;;
+}
+.header-cell {
+  font-weight: bold;
 }
 .header-row-container {
   border-bottom: 1px solid gray;
