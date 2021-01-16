@@ -22,7 +22,7 @@ const rows = [...Array(100)].map((x, ind) => {
     }
 });
 
-module.exports = {
+export {
     columns,
     rows,
     uniqueValues

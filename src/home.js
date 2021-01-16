@@ -54,7 +54,6 @@ const Home = () => {
         );
     }, [searchParams]);
     const onAuthFailure = (msg = 'Something went wrong') => {
-        return;
         alert(msg);
         navigate('/signin');
     }
